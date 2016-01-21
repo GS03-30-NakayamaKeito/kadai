@@ -76,6 +76,7 @@ if($status==false){
                     <label>Email:<input type="text" name="email" value="<?=$email?>"></label><br>
                     <label>年齢:<input type="text" name="age" value="<?=$age?>"></label><br>
                     <label>パスワード:<input type="password" name="password" ></label><br>
+                    <input type="hidden" name="id" value="<?=$id?>">
                     <input type="submit" value="更新">
                     
                 </fieldset>
