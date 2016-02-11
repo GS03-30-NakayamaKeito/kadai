@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('func1.php'); //外部ファイル読み込み（関数群）
+include('func.php'); //外部ファイル読み込み（関数群）
 
 //POST受け取り[POSTデータの未入力チェック]
 if( (isset($_POST["email"]) && $_POST["password"]!="") && (isset($_POST["email"]) && $_POST["password"]!="") ){
@@ -37,7 +37,7 @@ if( $val["id"] != "" ){
   header("Location: index.php");
 }else{
   //認証失敗：logout処理を経由して前画面へ
-  header("Location: logout1.php");
+  header("Location: logout.php");
 }
 exit();
 ?>
