@@ -1,4 +1,5 @@
 <?php
+include('func.php'); //外部ファイル読み込み（関数群）
     if(
         !isset($_POST["name"]) || $_POST["name"]=="" ||
         !isset($_POST["email"]) || $_POST["email"]=="" ||
@@ -35,6 +36,8 @@
     $stmt->bindValue(':a3', $age );
     $stmt->bindValue(':a4', $password);
     $status = $stmt->execute();
+
+funcContactAddress($email,$name);
 
     if($status == false) {
         $error =$stmt->errorInfo();

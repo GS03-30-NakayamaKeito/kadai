@@ -1,4 +1,11 @@
 <?php
+session_start();
+include('func1.php'); //外部ファイル読み込み（関数群）
+
+//０．前ページとこのページのセッションIDを比較し、ログイン認証済みかを判定
+//ログイン認証してなければ処理がここでストップする。
+sessionCheck(); // include/func.php に記載
+
 //1.  DB接続します
 try {
   $pdo = new PDO('mysql:dbname=gskadai_1_16;host=localhost','root','');
@@ -49,8 +56,8 @@ if($status==false){
 //    .        $result["email"].'</td><td>'
 //            .$result["age"].'</td><td>'
 //            .$result["indate"].</td></tr>';
-      $view .= "<tr><td>"
-                .$result['id']."</td><td>"
+      $view .= '<tr><td><a href="edit.php?id='.$result['id'].'">'
+                .$result['id']."</a></td><td>"
                 .$result['email'].'</td><td>'
                 .$result['name'].'</td><td>'
                 .$result['age'].'</td><td>'

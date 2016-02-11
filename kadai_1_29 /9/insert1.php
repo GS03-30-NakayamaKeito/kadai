@@ -1,4 +1,5 @@
 <?php
+include('func1.php'); //外部ファイル読み込み（関数群）
     if(
         !isset($_POST["name"]) || $_POST["name"]=="" ||
         !isset($_POST["email"]) || $_POST["email"]=="" ||
@@ -36,11 +37,13 @@
     $stmt->bindValue(':a4', $password);
     $status = $stmt->execute();
 
+funcContactAddress($email,$name);
+
     if($status == false) {
         $error =$stmt->errorInfo();
         exit("QuerryError:".$error[2]);
     }else {
-        header("Location: login.php");
+        header("Location: login1.php");
         exit;
         
     }
