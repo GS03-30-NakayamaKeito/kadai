@@ -20,8 +20,6 @@ if( $_SESSION["kanri_flg"]==1 ) {
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="ja">
     <head>

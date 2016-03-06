@@ -2,7 +2,7 @@
 //DB接続
 function db(){
   try {
-    return new PDO('mysql:dbname=gskadai_1_16;host=localhost', 'root', '');
+    return new PDO('mysql:dbname=Sports_DB;host=localhost', 'root', '');
   } catch (PDOException $e) {
     exit('DbConnectError:'.$e->getMessage());
   }
@@ -31,7 +31,7 @@ function loginSessionSet($val){
   $_SESSION["chk_ssid"]  = session_id();
   $_SESSION["kanri_flg"] = $val['kanri_flg'];
   $_SESSION["name"]      = $val['name'];
-  $_SESSION["age"]      = $val['age'];
+  //$_SESSION["age"]      = $val['age'];
   $_SESSION["email"]      = $val['email'];
 }
 

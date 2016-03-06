@@ -18,7 +18,7 @@ $pdo = db(); // new PDO(...を関数として読み込み (include/func.php)
 $stmt = dbCharSet($pdo);
 
 //３．データ登録SQL作成
-$stmt = $pdo->prepare("SELECT * FROM gskadai_1_16_table WHERE email=:email AND password=:password AND life_flg=0");
+$stmt = $pdo->prepare("SELECT * FROM user_table WHERE email=:email AND password=:password AND life_flg=0");
 $stmt->bindValue(':email', $email);
 $stmt->bindValue(':password', $password);
 $status = $stmt->execute();//SQL実行時
